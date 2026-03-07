@@ -7,7 +7,6 @@ const hero = defineCollection({
   schema: ({ image }) =>
     z.object({
       name: z.string(),
-      title: z.string(),
       description: z.string(),
       avatar: image(),
       location: z.string().optional(),
@@ -17,12 +16,7 @@ const hero = defineCollection({
           icon: z.enum([
             "GitHub",
             "LinkedIn",
-            "Twitter",
-            "Bluesky",
-            "Instagram",
-            "YouTube",
             "Email",
-            "FolderCode",
           ]),
           label: z.string(),
         })
@@ -30,7 +24,7 @@ const hero = defineCollection({
     }),
 });
 
-// Work experience collection
+// Trayectoria profesional collection
 const work = defineCollection({
   loader: glob({ pattern: "**/*.{md,mdoc,yaml}", base: "./src/content/work" }),
   schema: ({ image }) =>

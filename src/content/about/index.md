@@ -1,8 +1,11 @@
 ---
-title: About Me
+title: Sobre mi
 photo: '@assets/about/photo.png'
-link: https://linkedin.com/in/lauroguedes
+link: https://linkedin.com/in/mdelcarmenduran
 ---
-My toolkit revolves around the **Laravel and Vue JS** ecosystem. I enjoy crafting everything from robust APIs and full-stack applications to open-source tools like the [Mary UI Laravel Starter Kit](https://github.com/lauroguedes/mary-ui-starter-kit) and [Bloomfolio](https://github.com/lauroguedes/bloomfolio), an Astro portfolio template that's been forked dozens of times.
+Como **Data Analyst** en Adalab, cuento con experiencia en análisis y optimización de procesos, adquirida durante más de 7 años en empresas como Accenture España y QIPRO Soluciones. Durante este tiempo, he desarrollado competencias en **evaluación de procesos**, **elaboración de informes** y **resolución de incidencias** en entornos UAT, permitiéndome optimizar la eficiencia operativa y mejorar la **calidad del servicio** en entornos de alta exigencia.
 
-When I'm not coding, I'm probably exploring AI art, traveling, or listening to 🎸 heavy music way too loud.
+Mi conocimiento técnico incluye herramientas como **Python, SQL, Power BI y Tableau**, que utilizo para transformar datos en **insights** valiosos y crear dashboards visuales que facilitan la toma de decisiones estratégicas. Mi enfoque está en alinear tecnología y procesos con objetivos de negocio, trabajando en colaboración con equipos multidisciplinares para lograr resultados basados en datos fiables.
+
+Apasionada por transformar datos en decisiones estratégicas, con interés en BI y análisis de tendencias.
+

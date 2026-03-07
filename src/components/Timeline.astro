@@ -156,7 +156,7 @@ const entriesWithContent = await Promise.all(
                           class="btn btn-ghost btn-sm"
                           onclick={`document.getElementById('modal-${entry.id}').showModal()`}
                         >
-                          Read more
+                          Ver más
                         </button>
                       </div>
                     </div>
@@ -236,17 +236,17 @@ const entriesWithContent = await Promise.all(
                       rel="noopener noreferrer"
                       class="btn btn-ghost gap-2"
                     >
-                      View Company
+                      Link compañia
                       <ExternalLink class="size-4" />
                     </a>
                   )}
                   <form method="dialog">
-                    <button class="btn">Close</button>
+                    <button class="btn">Cerrar</button>
                   </form>
                 </div>
               </div>
               <form method="dialog" class="modal-backdrop">
-                <button>close</button>
+                <button>Cerrar</button>
               </form>
             </dialog>
           ))}
@@ -308,8 +308,8 @@ const entriesWithContent = await Promise.all(
                         class="link link-hover"
                       >
                         {collection === "work"
-                          ? "View Company"
-                          : "View Institution"}
+                          ? "Link compañia"
+                          : "Link institución"}
                       </a>
                     </div>
                   )}
@@ -330,7 +330,7 @@ const entriesWithContent = await Promise.all(
             rel="noopener noreferrer"
             class="btn btn-primary btn-outline"
           >
-            More my Work Experience
+            Ver más experiencia
           </a>
         </div>
       )
