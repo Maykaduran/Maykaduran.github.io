@@ -12,6 +12,12 @@ export default defineConfig({
   site: "https://maykaduran.github.io",
   base: "/",
   output: "static",
+  
+  // Estas dos líneas ayudan a que los enlaces y assets no den error 404 en GitHub
+  trailingSlash: "always",
+  build: {
+    format: "directory",
+  },
 
   integrations: [
     react(), 
