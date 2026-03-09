@@ -1,19 +1,25 @@
-// @ts-check
+// astro.config.mjs
 import { defineConfig } from "astro/config";
-
 import tailwindcss from "@tailwindcss/vite";
-
 import react from "@astrojs/react";
 import markdoc from "@astrojs/markdoc";
 import keystatic from "@keystatic/astro";
 
-// https://astro.build/config
-export default defineConfig({
-  // URL base de tu sitio
-  site: "https://maykaduran.github.io",
-  base: "/", // ✅ Como es repo de usuario, base es "/"
+// Detectamos si estamos en modo "build" (producción para GitHub)
+const isBuild = process.env.NODE_ENV === 'production';
 
-  integrations: [react(), markdoc(), keystatic()],
+export default defineConfig({
+  site: "https://maykaduran.github.io",
+  base: "/",
+  output: "static",
+
+  integrations: [
+    react(), 
+    markdoc(),
+    // SOLO cargamos Keystatic si NO estamos haciendo el build final
+    // Esto evita que intente inyectar rutas de servidor en GitHub Pages
+    !isBuild ? keystatic() : null, 
+  ].filter(Boolean), // Filtramos el null para que Astro no se queje
 
   vite: {
     plugins: [tailwindcss()],
@@ -21,6 +27,4 @@ export default defineConfig({
       include: ["@keystatic/core", "@keystatic/astro"],
     },
   },
-
-  output: "static", // ✅ GitHub Pages solo sirve sitios estáticos
 });

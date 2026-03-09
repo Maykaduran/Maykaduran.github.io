@@ -2,18 +2,17 @@ import { config, fields, collection, singleton } from "@keystatic/core";
 import { block } from "@keystatic/core/content-components";
 
 export default config({
-  storage: import.meta.env.PUBLIC_KEYSTATIC_GITHUB_APP_SLUG
-    ? {
-        kind: "github",
-        repo: {
-          owner: import.meta.env.PUBLIC_KEYSTATIC_REPO_OWNER!,
-          name: import.meta.env.PUBLIC_KEYSTATIC_REPO_NAME!,
-        },
-      }
+  storage: (process.env.NODE_ENV === 'development') 
+    ? { kind: 'local' }
     : {
-        kind: "local",
+        kind: 'github',
+        repo: {
+          owner: 'Maykaduran',
+          name: 'Maykaduran.github.io',
+        },
       },
-
+  // ... resto de la configuración
+  
   singletons: {
     hero: singleton({
       label: "Hero Section",
