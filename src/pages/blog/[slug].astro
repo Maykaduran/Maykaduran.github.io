@@ -1,0 +1,30 @@
+---
+import { getCollection, render } from "astro:content";
+import BlogLayout from "../../layouts/BlogLayout.astro";
+
+// 1. Generamos las rutas para todos los posts en el momento del build
+export async function getStaticPaths() {
+  const posts = await getCollection("blog");
+  return posts.map((post) => ({
+    params: { slug: post.id }, // Usamos post.id para el slug
+    props: { post },           // Pasamos el post completo como prop
+  }));
+}
+
+// 2. Obtenemos el post desde las props (es más rápido que getEntry)
+const { post } = Astro.props;
+
+// 3. Renderizamos el contenido
+const { Content } = await render(post);
+---
+
+<BlogLayout
+  title={post.data.title}
+  description={post.data.description}
+  publishDate={post.data.publishDate}
+  updatedDate={post.data.updatedDate}
+  image={post.data.image}
+  tags={post.data.tags}
+>
+  <Content />
+</BlogLayout>
