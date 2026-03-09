@@ -101,8 +101,8 @@ const blog = defineCollection({
   schema: ({ image }) =>
     z.object({
       title: z.string(),
-      description: z.string(),
-      image: image(),
+      description: z.string().optional(), // <--- Añadimos .optional()
+      image: image().optional(),          // <--- Añadimos .optional()
       publishDate: z.coerce.date(),
       updatedDate: z.coerce.date().optional(),
       tags: z.array(z.string()).optional(),
