@@ -1,31 +1,26 @@
-// astro.config.mjs
 import { defineConfig } from "astro/config";
 import tailwindcss from "@tailwindcss/vite";
 import react from "@astrojs/react";
 import markdoc from "@astrojs/markdoc";
 import keystatic from "@keystatic/astro";
 
-// Detectamos si estamos en modo "build" (producción para GitHub)
 const isBuild = process.env.NODE_ENV === 'production';
 
 export default defineConfig({
   site: "https://maykaduran.github.io",
-  base: "/",
+  base: "/", // Importante: Mantén esto tal cual
   output: "static",
   
-  // Estas dos líneas ayudan a que los enlaces y assets no den error 404 en GitHub
-  trailingSlash: "always",
+  // FORZAMOS a que Astro no use la carpeta con guion bajo
   build: {
-    format: "directory",
+    assets: "assets" 
   },
 
   integrations: [
     react(), 
     markdoc(),
-    // SOLO cargamos Keystatic si NO estamos haciendo el build final
-    // Esto evita que intente inyectar rutas de servidor en GitHub Pages
     !isBuild ? keystatic() : null, 
-  ].filter(Boolean), // Filtramos el null para que Astro no se queje
+  ].filter(Boolean),
 
   vite: {
     plugins: [tailwindcss()],
