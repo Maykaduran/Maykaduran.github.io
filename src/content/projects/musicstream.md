@@ -22,8 +22,7 @@ skills:
 
 demoLink: https://github.com/Maykaduran/MusicStream-API-SQL
 sourceLink: https://github.com/Maykaduran/MusicStream-API-SQL
-
-featured: true
+featured: false
 ---
 
 ## Project Overview
